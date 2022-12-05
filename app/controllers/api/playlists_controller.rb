@@ -28,7 +28,7 @@ class Api::PlaylistsController < ApplicationController
 
   def destroy
     @playlist.destroy
-    render json: { message: 'playlist deleted' }
+    render json: { message: 'Playlist deleted' }
   end
 
   private
