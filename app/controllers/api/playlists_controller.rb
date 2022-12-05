@@ -11,6 +11,7 @@ class Api::PlaylistsController < ApplicationController
   end
 
   def create
+    @playlist = Playlist.new(playlist_params)
     if @playlist.save
       render json: @playlist
     else
@@ -28,7 +29,7 @@ class Api::PlaylistsController < ApplicationController
 
   def destroy
     @playlist.destroy
-    render json: { message: 'playlist deleted' }
+    render json: { message: 'Playlist deleted' }
   end
 
   private
