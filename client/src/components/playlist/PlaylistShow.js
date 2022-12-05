@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const PlaylistShow = ({ id, name, genre, updatePlaylist, deletePlaylist }) => {
     const [editing, setEdit] = useState(false)
 
-    (
+    return (
         <>
           {
             editing ?
@@ -39,4 +39,4 @@ const PlaylistShow = ({ id, name, genre, updatePlaylist, deletePlaylist }) => {
         </>
     )
 }
-export defeault PlaylistShow;
+export default PlaylistShow;

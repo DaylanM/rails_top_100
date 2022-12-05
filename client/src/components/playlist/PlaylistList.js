@@ -1,13 +1,13 @@
 import PlaylistShow from './PlaylistShow';
 
-const PlaylistList = ({ playlists, updatePlaylist, deletePLaylist }) => (
+const PlaylistList = ({ playlists, updatePlaylist, deletePlaylist }) => (
   <>
-    { lists.map(l => 
-      <ListShow
+    { playlists.map(l => 
+      <PlaylistShow
         key={l.id}
         {...l}
         updatePlaylist={updatePlaylist}
-        deletePLaylist={deletePLaylist}
+        deletePlaylist={deletePlaylist}
       />
     )}
   </>

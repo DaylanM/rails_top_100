@@ -3,6 +3,7 @@ import Home from "./components/shared/Home";
 import MainNavbar from "./components/shared/MainNavbar";
 import Nomatch from "./components/shared/Nomatch";
 import About from "./components/shared/About";
+import Playlists from "./components/playlist/Playlists"
 
 const App = () => (
   <>
@@ -10,7 +11,7 @@ const App = () => (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
-      {/* <Route path="/Playlists" element={<Playlists />} /> */}
+      <Route path="/Playlists" element={<Playlists />} />
       <Route path="/*" element={<Nomatch />} />
     </Routes>
   

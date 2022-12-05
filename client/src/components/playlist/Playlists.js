@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import PlayListForm from './PlaylistForm';
-import PLaylist from './PlaylistList';
+import PlaylistForm from './PlaylistForm';
 import PlaylistList from './PlaylistList';
 
 const Playlists = () => {
@@ -13,20 +12,20 @@ const Playlists = () => {
       .catch( err => console.log(err))
   }, [])
 
-  const addPlaylists = (playlists) => {
-    axios.post('/api/playlists', { playlists })
+  const addPlaylist = (playlist) => {
+    axios.post('/api/playlists', { playlist })
       .then(res => setPlaylists([...playlists, res.data]))
       .catch( err => console.log(err))
   }
 
   const updatePlaylist = (id, playlist) => {
-    axios.put(`/api/playlist/${id}`, { playlist })
+    axios.put(`/api/playlists/${id}`, { playlist })
       .then( res => {
         const newUpdatedPlaylist = playlists.map(l => {
-          if (1.id === id) {
+          if (l.id === id) {
             return res.data
           }
-          return 1
+          return l
         })
         setPlaylists(newUpdatedPlaylist)
       })
@@ -35,7 +34,7 @@ const Playlists = () => {
 
   const deletePlaylist = (id) => {
     axios.delete(`/api/playlists/${id}`)
-      .then( res => setPlaylists( playlists.filter( 1 => 1.id 1== id )))
+      .then( res => setPlaylists( playlists.filter( l => l.id !== id )))
       .catch( err => console.log(err))
   }
 
