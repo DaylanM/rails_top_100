@@ -31,9 +31,9 @@ const PlaylistShow = ({ id, name, genre, updatePlaylist, deletePlaylist }) => {
               <button onClick={() => deletePlaylist(id)}>
                 Delete
               </button>
-              {/* <Link to={`/${id}/playlists`}>
-                <button>Playlists</button>
-              </Link> */}
+              <Link to={`/${id}/artists`}>
+                <button>Artists</button>
+              </Link>
             </>
           }
         </>

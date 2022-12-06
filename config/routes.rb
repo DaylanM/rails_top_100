@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   resources :artists, except: [:index, :show, :create, :update, :destroy] do
     resources :songs
   end
+
+  
 end
