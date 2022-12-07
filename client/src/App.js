@@ -5,7 +5,7 @@ import Nomatch from "./components/shared/Nomatch";
 import About from "./components/shared/About";
 import Playlists from "./components/playlist/Playlists"
 import Artist from "./components/artists/Artist";
-// import Songs from "./components/songs/Songs";
+import Songs from "./components/song/Songs";
 
 const App = () => (
   <>
