@@ -1,8 +1,8 @@
 import ArtistShow from './ArtistShow';
 
-const ArtistList = ({ artist, updateArtist, deleteArtist }) => (
+const ArtistList = ({ artists, updateArtist, deleteArtist }) => (
   <>
-    { artist.map(l => 
+    { artists.map(l => 
       <ArtistShow 
         key={l.id}
         {...l}
