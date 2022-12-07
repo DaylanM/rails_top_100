@@ -26,18 +26,20 @@ const ArtistForm = ({ addArtist, id, name, genre, updateArtist, setEdit }) => {
       <form onSubmit={handleSubmit}>
         <label>Name</label>
         <input 
+          placeholder='Name'
           name='Name'
           value={artist.name}
           onChange={(e) => setArtist({ ...artist, name: e.target.value })}
           required
         />
         <label>Genre</label>
-        <textarea 
+        <input 
+          placeholder='Genre'
           name='Genre'
           value={artist.genre}
           onChange={(e) => setArtist({ ...artist, genre: e.target.value })}
           required
-        ></textarea>
+        />
         <button type='submit'>Submit</button>
       </form>
     </>
