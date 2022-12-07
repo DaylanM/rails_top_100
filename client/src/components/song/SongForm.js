@@ -22,6 +22,7 @@ const SongForm = ({ addSong, id, name, updateSong, setEdit }) => {
 
   return(
     <>
+      <p>{name}</p>
       <h1>{id ? "Update" : "Create"} Song</h1>
       <form onSubmit={handleSubmit}>
         <label>name</label>
