@@ -6,8 +6,8 @@ import SongForm from './SongForm';
 
 const Songs = () => {
   const [songs, setSongs] = useState([])
-
   const { artistId } = useParams()
+
 
   useEffect( () => {
     axios.get(`/api/artists/${artistId}/songs`)
@@ -15,7 +15,7 @@ const Songs = () => {
       .catch( err => console.log(err))
   }, [])
 
-  const addSong = (Song) => {
+  const addSong = (song) => {
     axios.post(`/api/artists/${artistId}/songs`, { song })
       .then( res => setSongs([...songs, res.data]))
       .catch( err => console.log(err))

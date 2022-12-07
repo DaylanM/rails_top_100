@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import SongForm from './SongForm'; 
 
-const SongShow = ({ id, song_name, updateSong, deleteSong }) => {
+const SongShow = ({ id, name, updateSong, deleteSong }) => {
   const [editing, setEdit] = useState(false)
   
   return (
@@ -11,7 +11,7 @@ const SongShow = ({ id, song_name, updateSong, deleteSong }) => {
         <>
           <SongForm 
             id={id}
-            song_name={song_name}
+            name={name}
             updateSong={updateSong}
             setEdit={setEdit}
           />
@@ -21,8 +21,7 @@ const SongShow = ({ id, song_name, updateSong, deleteSong }) => {
         </>
         :
         <>
-          <h1>{Artist}</h1>
-          <p>{song}</p>
+          <h3>{name}</h3>
           <button onClick={() => setEdit(true)}>
             Edit
           </button>

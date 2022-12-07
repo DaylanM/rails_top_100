@@ -6,7 +6,6 @@ import About from "./components/shared/About";
 import Playlists from "./components/playlist/Playlists"
 import Artist from "./components/artists/Artist";
 import Songs from "./components/song/Songs";
-;
 
 const App = () => (
   <>

@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 
-const SongForm = ({ addSong, id, song_name, updateSong, setEdit }) => {
-  const [song, setSong] = useState({ song_name: '', })
+const SongForm = ({ addSong, id, name, updateSong, setEdit }) => {
+  const [song, setSong] = useState({ name: '', })
 
   useEffect( () => {
     if (id) {
-      setSong({ song_name })
+      setSong({ name })
     }
   }, [])
 
@@ -15,20 +15,20 @@ const SongForm = ({ addSong, id, song_name, updateSong, setEdit }) => {
       updateSong(id, song)
       setEdit(false)
     } else {
-      addSong (song)
+      addSong(song)
     }
-    setSong({ song_name: '' })
+    setSong({ name: '' })
   }
 
   return(
     <>
       <h1>{id ? "Update" : "Create"} Song</h1>
       <form onSubmit={handleSubmit}>
-        <label>song_name</label>
+        <label>name</label>
         <input 
-          song_name='song'
-          value={song.song}
-          onChange={(e) => setSong({...song, song_name: e.target.value })}
+          name='name'
+          value={song.name}
+          onChange={(e) => setSong({...song, name: e.target.value })}
           required
         />
         <button type='submit'>Submit</button>

@@ -31,7 +31,7 @@ const ArtistShow = ({ id, name, genre, updateArtist, deleteArtist }) => {
           <button onClick={() => deleteArtist(id)}>
             Delete
           </button>
-          <Link to='/songs'>
+          <Link to={`/${id}/songs`}>
             <button>Songs</button>
           </Link>
         </>
