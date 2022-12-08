@@ -3,7 +3,6 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import ArtistForm from './ArtistForm';
 import ArtistList from './ArtistList';
-import ArtistShow from './ArtistShow';
 
 const Artist = () => {
   const [artists, setArtists] = useState([])
