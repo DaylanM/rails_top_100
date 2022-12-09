@@ -9,5 +9,9 @@ Rails.application.routes.draw do
       resources :songs
     end
 
+    resources :songs, except: [:index, :show, :create, :update, :destroy] do
+      resources :reviews
+    end
+
   end
 end

@@ -37,7 +37,7 @@ const Songs = () => {
 
   const deleteSong = (id) => {
     axios.delete(`/api/artists/${artistId}/songs/${id}`)
-      .then( res => setSongs( songs.filter( c => c.id !== id)))
+      .then( res => setSongs(songs.filter( c => c.id !== id)))
       .catch( err => console.log(err))
   }
 

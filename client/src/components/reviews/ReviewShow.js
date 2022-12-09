@@ -1,8 +1,7 @@
 import { useState } from 'react';
-import SongForm from './SongForm'; 
-import { Link } from 'react-router-dom';
+import ReviewForm from './ReviewForm'; 
 
-const SongShow = ({ id, name, updateSong, deleteSong }) => {
+const ReviewShow = ({ id, name, body, rating, updateReview, deleteReview }) => {
   const [editing, setEdit] = useState(false)
   
   return (
@@ -10,10 +9,12 @@ const SongShow = ({ id, name, updateSong, deleteSong }) => {
       {
         editing ?
         <>
-          <SongForm 
+          <ReviewForm 
             id={id}
             name={name}
-            updateSong={updateSong}
+            body={body}
+            rating={rating}
+            updateReview={updateReview}
             setEdit={setEdit}
           />
           <button onClick={() => setEdit(false)}> 
@@ -23,19 +24,18 @@ const SongShow = ({ id, name, updateSong, deleteSong }) => {
         :
         <>
           <h3>{name}</h3>
+          <p>{body}</p>
+          <p>{rating}</p>
           <button onClick={() => setEdit(true)}>
             Edit
           </button>
-          <button onClick={() => deleteSong(id)}>
+          <button onClick={() => deleteReview(id)}>
             Delete
           </button>
-          <Link to={`/${id}/reviews`}>
-            <button>Reviews</button>
-          </Link>
         </>
       }    
     </>
   )
 }
 
-export default SongShow;
+export default ReviewShow;
